@@ -1,7 +1,8 @@
 Repo for short Serverless JavaScript workshop, targetting IBM Cloud Functions platform
 
 Prereq's:
-
+1. Do the setup here: [Setup for workshop](https://github.com/prpatel/Serverless-Workshop-Setup-All-Platforms)
+2. Make sure to have node 8+ installed
 
 ### Test IBM Cloud Functions From The CLI
 
@@ -14,14 +15,14 @@ Prereq's:
    }
    ```
 
-*If this command executes successfully, you have verified that the IBM Cloud CLI and Cloud Functions plugin have been installed and configured correctly. If this does not work, please contact the workshop organiser to provide assistance!*
+*If you're using the local OpenWhisk instance, simply drop the 'ibmcloud' at the beginning of the command, and run the rest*
 
-🎉🎉🎉 **Congratulations, you've successfully registered an IBM Cloud account, configured the IBM Cloud CLI for Cloud Functions development and executed your first serverless function! Let's start using the platform to create our own serverless applications…** 🎉🎉🎉
+*If this command executes successfully, you have verified that the IBM Cloud CLI and Cloud Functions plugin have been installed and configured correctly. If this does not work, please contact the workshop organiser to provide assistance!*
 
 ### Build and deploy your first Serverless JavaScript App!
 
 From where you cloned this git repo:
-1. mvn package  
+1. node -v
 2. ibmcloud fn action create helloJavaScript helloJavaScript.js
 3. ibmcloud fn action invoke --result helloJavaScript --param name World
 
