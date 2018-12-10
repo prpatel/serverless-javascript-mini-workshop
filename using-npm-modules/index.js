@@ -18,6 +18,6 @@ function main({max}) {
 }
 
 // for quick testing, uncomment below, and just run: 'node index.js' (from command line
-// console.log(main({max: 50}));
+console.log(main({max: 50}));
 
 exports.main = global.main = main;

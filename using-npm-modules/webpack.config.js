@@ -1,42 +1,23 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
 
 module.exports = {
-    entry: [
-        `${__dirname}/index`
-    ],
+    entry: "./index.js",
+    target: "node",
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: "bundle.js",
+        path: path.resolve(__dirname, "build")
     },
-    module: {
-        loaders: [
-            { test: /\.json$/, loader: 'json-loader' },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
+    mode: 'production',
+    // module: {
+    //     rules: [
+    //         {
+    //             test: /\.tsx?$/,
+    //             use: 'ts-loader',
+    //             exclude: /node_modules/
+    //         }
+    //     ]
+    // },
+    resolve: {
+        extensions: [ ".tsx", ".ts", ".js" ]
     },
-    target: 'node',
-    plugins: [
-        new webpack.DefinePlugin({
-            'process.env': {
-                // Useful to reduce the size of libraries
-                NODE_ENV: JSON.stringify('production'),
-            }
-        }),
-        // optimizations
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ]
-};
+}

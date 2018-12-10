@@ -114,8 +114,58 @@ webHello?name=Pratik
 Of course, put your name instead of mine :)
 
 ### 7. Using NPM libs in your Cloud Functions
+* Demo project is in "using-npm-modules" folder
+* Uses the "random" npm lib
+* Uses webpack to produce a single bundle.js file to bundle all npm deps
+* Deploy and run:
+``` 
+cd using-npm-modules
+npm install
+npm run build
+```
+When it asks to install webpack-cli, say 'yes'
 
-npm init
-> cloud-function-with-npm
+*deploy:*
+``` 
+ibmcloud fn action create webRandom build/bundle.js --web true 
+```
 
-npm install random --save
+*run from console*
+```
+ibmcloud fn action invoke --result webRandom --param max 1000
+```
+
+* To run from the web browser, remember you can get the URL using this:
+``` 
+ibmcloud wsk action get helloJavaScript --url
+
+--> https://us-south.functions.cloud.ibm.com/api/v1/web/YOUR_ORG_WILL_BE_HERE/default/webRandom
+```
+
+And you'll see output like this:
+
+![webRandom running in browser](images/webRandomInBrowser.png)
+
+Check the code (index.js) to see what you can pass in as a parameter! (Remember to append to the URL, see above example)
+### 8. Extra credit
+
+#### You now have all the building blocks to create Serverless Applications! What next?
+* Write unit tests for your serverless application. For the last example, you can run a unit testing by doing this:
+``` 
+npm run test
+```
+This in the "using-npm-modules" sample folder folder
+* Use more npm libs by doing an npm install
+    * Remember - serverless applications are supposed to lean n' mean! Don't use heavy libs, rely on the useful stuff OpenWhisk provides, or use 3rd party serverless apps
+
+### Coming soon (for full day Serverless workshops)
+0. Calling our Serverless fns from a Web application!
+0. Using and examing Web Cloud Function HTTP request headers
+0. Changing Web Cloud Function HTTP response headers
+1. Using cloud db's for saving data
+2. Using redis for in-memory storage of sessions
+3. Sequencing for weaving together Serverless fns
+4. Using an API Gateway for organizing endpoints
+5. Layering Authentication on top
+6. Advanced debugging
+7. Much Much more!
