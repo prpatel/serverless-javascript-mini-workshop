@@ -1,12 +1,12 @@
 Repo for short Serverless JavaScript workshop, targetting IBM Cloud Functions platform
 
-Prereq's:
+## Prerequisites: 
 1. Do the setup here: [Setup for workshop](https://github.com/prpatel/Serverless-Workshop-Setup-All-Platforms)
 2. Make sure to have node 8+ installed
 
-### 1. Test IBM Cloud Functions From The CLI
+### 0. Test IBM Cloud Functions From The CLI
 
-1. Run the following command to invoke a test function from the command-line.
+0. Run the following command to invoke a test function from the command-line.
 
    ```
    $ ibmcloud wsk action invoke whisk.system/utils/echo -p message hello --result
@@ -18,6 +18,9 @@ Prereq's:
 *If you're using the local OpenWhisk instance, simply drop the 'ibmcloud' at the beginning of the command, and run the rest*
 
 *If this command executes successfully, you have verified that the IBM Cloud CLI and Cloud Functions plugin have been installed and configured correctly. If this does not work, please contact the workshop organiser to provide assistance!*
+
+### 1. Get to know the Web Console
+Open up the webconsole/ folder for a step-by-step guide working with cloud functions right from a browser!
 
 ### 2. Build and deploy your first Serverless JavaScript App!
 
@@ -97,6 +100,8 @@ Use the first command in this section to get the URL... don't forget to append .
 ![Cloud Function in browser](images/webactioninbrowser.png)
 
 ### 6. Create a HTML Web Cloud Function
+So far we've just been creating JSON return values. What if we want to return some HTML?
+
 * Check out the sample webHello.js in this project
 * Create a web-enabled Cloud Function using this command:
 ```
@@ -113,7 +118,15 @@ webHello?name=Pratik
 ```
 Of course, put your name instead of mine :)
 
-### 7. Using NPM libs in your Cloud Functions
+### 7. Sequences
+
+Go into the sequences/ folder and follow instructions there!
+
+### 8. Triggers
+
+Go into the triggers/ folder and follow the instructions there!
+
+### 9. Using NPM libs in your Cloud Functions
 * Demo project is in "using-npm-modules" folder
 * Uses the "random" npm lib
 * Uses webpack to produce a single bundle.js file to bundle all npm deps
@@ -158,13 +171,10 @@ This in the "using-npm-modules" sample folder folder
 * Use more npm libs by doing an npm install
     * Remember - serverless applications are supposed to lean n' mean! Don't use heavy libs, rely on the useful stuff OpenWhisk provides, or use 3rd party serverless apps
 
-### Coming soon (for full day Serverless workshops)
-0. Calling our Serverless fns from a Web application!
-0. Using and examing Web Cloud Function HTTP request headers
-0. Changing Web Cloud Function HTTP response headers
-1. Using cloud db's for saving data
-2. Using redis for in-memory storage of sessions
-3. Sequencing for weaving together Serverless fns
+### Continue your journey for serverless
+1. Calling our Serverless fns from a Web application!
+2. Using cloud db's for saving data
+3. Using redis for in-memory storage of sessions
 4. Using an API Gateway for organizing endpoints
 5. Layering Authentication on top
 6. Advanced debugging
