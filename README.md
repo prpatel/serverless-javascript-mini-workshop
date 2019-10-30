@@ -150,7 +150,7 @@ ibmcloud fn action invoke --result webRandom --param max 1000
 
 * To run from the web browser, remember you can get the URL using this:
 ``` 
-ibmcloud wsk action get helloJavaScript --url
+ibmcloud wsk action get webRandom --url
 
 --> https://us-south.functions.cloud.ibm.com/api/v1/web/YOUR_ORG_WILL_BE_HERE/default/webRandom
 ```
