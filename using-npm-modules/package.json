@@ -19,6 +19,6 @@
     "chai": "^4.2.0",
     "json-loader": "^0.5.7",
     "mocha": "^5.2.0",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.3.12"
   }
 }
